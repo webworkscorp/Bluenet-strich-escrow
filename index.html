@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="vtifmV2kOYf3RNzhEaIhTY3M9jUe7Y9RqLazVURh0-s" />
+    <title>BLUENET trust & escrow | Comisiones de Confianza y Cumplimiento</title>
+    <link rel="icon" type="image/jpeg" href="https://i.imgur.com/QgS56s7.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                primary: '#000000',
+                secondary: '#1C1C1C',
+                accent: '#4A90E2', // Azul vibrante solicitado por el usuario
+                accentLight: '#63A1E9',
+                neutralLight: '#F8F8F8',
+                neutralDark: '#333333',
+              }
+            },
+            fontFamily: {
+              serif: ['"Libre Baskerville"', 'serif'],
+              sans: ['Montserrat', 'sans-serif'],
+            },
+            animation: {
+              'fade-up': 'fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+              'fade-in': 'fadeIn 1s ease-out forwards',
+            },
+            keyframes: {
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+        overflow-x: hidden;
+      }
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #F8F8F8;
+        color: #1C1C1C;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        /* Previene saltos de layout al cargar elementos dinámicos */
+        overflow-anchor: none; 
+      }
+
+      .font-serif {
+        font-family: 'Libre Baskerville', serif;
+      }
+      
+      .reveal {
+        opacity: 0;
+        transform: translateY(15px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      #root {
+        min-height: 100vh;
+        position: relative;
+        z-index: 1;
+      }
+
+      h1, h2, h3, h4 {
+        letter-spacing: -0.02em;
+      }
+      
+      ::selection {
+        background-color: #4A90E2;
+        color: white;
+      }
+
+      /* Mejora estabilidad de transformaciones */
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "lucide-react": "https://esm.sh/lucide-react@0.263.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
