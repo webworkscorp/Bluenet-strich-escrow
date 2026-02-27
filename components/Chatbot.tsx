@@ -48,7 +48,17 @@ const Chatbot: React.FC = () => {
     if (chatSessionRef.current) return;
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      // Improved API key detection
+      const apiKey = process.env.GEMINI_API_KEY || 
+                     process.env.VITE_GEMINI_API_KEY || 
+                     (import.meta as any).env?.VITE_GEMINI_API_KEY;
+
+      if (!apiKey) {
+        console.error("Gemini API Key not found in environment variables.");
+        return;
+      }
+
+      const ai = new GoogleGenAI({ apiKey });
       const chat = ai.chats.create({
         model: "gemini-3-flash-preview",
         config: {
